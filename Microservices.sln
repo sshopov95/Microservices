@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomersApi", "CustomersAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationsApi", "ReservationsApi\ReservationsApi.csproj", "{ACF312BD-4B81-44D5-8E0E-668DF9171A8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{FE6DE292-2FCE-45C6-BC79-447C7320586E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{ACF312BD-4B81-44D5-8E0E-668DF9171A8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACF312BD-4B81-44D5-8E0E-668DF9171A8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACF312BD-4B81-44D5-8E0E-668DF9171A8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE6DE292-2FCE-45C6-BC79-447C7320586E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE6DE292-2FCE-45C6-BC79-447C7320586E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE6DE292-2FCE-45C6-BC79-447C7320586E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE6DE292-2FCE-45C6-BC79-447C7320586E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

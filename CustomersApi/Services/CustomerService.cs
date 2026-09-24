@@ -1,7 +1,9 @@
-﻿using CustomersApi.Data;
+﻿using Azure.Messaging.ServiceBus;
+using CustomersApi.Data;
 using CustomersApi.Interfaces;
 using CustomersApi.Models;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace CustomersApi.Services
 {
@@ -27,6 +29,24 @@ namespace CustomersApi.Services
 
                 await dbContext.Customers.AddAsync(customer);
                 await dbContext.SaveChangesAsync();
+
+                //Add Code for Azure messaging bus
+                string connectionString = "Endpoint= ... ";
+                string queueName = "queue_name";
+
+                //using IAsyncDisposable ServiceBusClient -> "await using"
+                await using ServiceBusClient client = new ServiceBusClient(connectionString);
+
+                //create sender
+                ServiceBusSender sender = client.CreateSender(queueName);
+                
+                string json = JsonConvert.SerializeObject(customer);
+
+                //create a a message. UTF-8 used
+                ServiceBusMessage message = new ServiceBusMessage(json);
+
+                //send message
+                await sender.SendMessageAsync(message);
             }
         }
     }
